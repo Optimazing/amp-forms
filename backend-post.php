@@ -9,7 +9,8 @@ if (!empty($_POST)) {
     header("amp-access-control-allow-source-origin:https://".$_SERVER['HTTP_HOST']);
     header("Content-Type: application/json");
     $email = isset($_POST['email']) ? $_POST['email'] : '';
-    $output = ['email' => $email];
+    $name = isset($_POST['name']) ? $_POST['name'] : '';
+    $output = ['email' => $email, 'name' => $name];
     header("Content-Type: application/json");
     echo json_encode($output);
 }
