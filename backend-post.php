@@ -13,7 +13,7 @@ if (!empty($_POST)) {
     $output = ['email' => $email, 'name' => $name];
     header("Content-Type: application/json");
     if ($name != 'Test') {
-        header( '400 Bad Response' );
+        header('HTTP/1.1 400 Bad Request', true, 400);
     }
     echo json_encode($output);
 }
