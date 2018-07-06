@@ -12,7 +12,7 @@ if (!empty($_POST)) {
     $name = isset($_POST['name']) ? $_POST['name'] : '';
     $output = ['email' => $email, 'name' => $name];
     header("Content-Type: application/json");
-    if ($name != 'Test') {
+    if ( strtolower($name) != 'test' ) {
         header('HTTP/1.1 400 Bad Request', true, 400);
     }
     echo json_encode($output);
